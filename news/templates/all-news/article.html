@@ -1,0 +1,23 @@
+{%extends 'all-news/base.html'%}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        {%if article.article_image %}
+        <img src ="{{article.article_image.url}}" class="img-responsive" alt="">
+        {% else %}
+        <p>No image to display</p>
+        {%endif%}
+
+    </div>
+    <div class="row">
+        <p>{{ article.post}}</p>
+    </div>
+    <div class="row">
+        <p>Posted {{article.pub_date| timesince}} by {{ article.editor.first_name}}</p>
+    </div>
+</div>
+
+{%endblock %}
+<img src ="{{article.article_image.url}}" class="img-responsive" alt="">
